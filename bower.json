@@ -1,0 +1,23 @@
+{
+  "name": "timestamp",
+  "version": "0.0.0",
+  "homepage": "https://github.com/savokiss/timestamp",
+  "authors": [
+    "Jason <jaynaruto@qq.com>"
+  ],
+  "description": "",
+  "main": "",
+  "moduleType": [],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "vendor",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "bootstrap": "~3.3.6"
+  }
+}
