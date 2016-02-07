@@ -1,7 +1,7 @@
 'use strict';
 
 var path = process.cwd();
-var TimeHandler = require(path + '/app/controllers/timeHandler.server.js');
+var HeaderHandler = require(path + '/app/controllers/headerHandler.server.js');
 
 module.exports = function (app, passport) {
 
@@ -14,15 +14,15 @@ module.exports = function (app, passport) {
 		return next();
 	}
 
-	var timeHandler = new TimeHandler();
+	var headerHandler = new HeaderHandler();
 
 	app.route('/')
-		.get(isLoggedIn, function (req, res) {
-			res.sendFile(path + '/public/index.html');
+		.get(function (req, res) {
+			res.json({'message':'please visit api/whoami'});
 		});
     
-    app.route('/:timeStr')
-		.get(isLoggedIn, timeHandler.getTimestamp);
+    app.route('/api/whoami')
+		.get(headerHandler.whoami);
 
 	// app.route('/login')
 	// 	.get(function (req, res) {
